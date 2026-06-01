@@ -1,0 +1,183 @@
+/* 后台管理系统 - 卡密管理页面样式 */
+
+/* 卡密生成表单 */
+.card-key-form {
+    background: var(--white);
+    padding: 24px;
+    border-radius: var(--border-radius);
+    margin-bottom: 24px;
+}
+
+.card-key-form .form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+/* 卡密列表 */
+.card-key-list {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.card-key-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+}
+
+.card-key-item:hover {
+    background: var(--gray-50);
+}
+
+.card-key-item:last-child {
+    border-bottom: none;
+}
+
+.card-key-info {
+    flex: 1;
+}
+
+.card-key-code {
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 4px;
+}
+
+.card-key-meta {
+    font-size: 12px;
+    color: var(--gray-500);
+}
+
+.card-key-status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 12px;
+}
+
+.card-key-status.unused {
+    background: #f0f9eb;
+    color: #274e2b;
+}
+
+.card-key-status.used {
+    background: #fef0f0;
+    color: #5c0a0a;
+}
+
+.card-key-status.disabled {
+    background: #f5f5f5;
+    color: #666;
+}
+
+.card-key-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* 卡密导出 */
+.card-key-export {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.card-key-export .btn {
+    flex: 1;
+    max-width: 150px;
+}
+
+/* 卡密统计 */
+.card-key-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.card-key-stat {
+    background: var(--white);
+    padding: 16px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 1px solid var(--gray-200);
+}
+
+.card-key-stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.card-key-stat-label {
+    font-size: 12px;
+    color: var(--gray-500);
+}
+
+/* 生成的卡密显示 */
+.generated-keys-modal {
+    max-width: 600px;
+}
+
+.generated-keys-list {
+    background: var(--gray-50);
+    padding: 16px;
+    border-radius: 4px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 16px;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.generated-keys-list .key {
+    color: var(--primary);
+    word-break: break-all;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .card-key-form .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .card-key-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-key-actions {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .card-key-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card-key-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .card-key-export {
+        flex-direction: column;
+    }
+
+    .card-key-export .btn {
+        max-width: 100%;
+    }
+}

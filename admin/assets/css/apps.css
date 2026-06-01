@@ -1,0 +1,244 @@
+/* 后台管理系统 - 应用管理页面样式 */
+
+/* 应用管理特定样式 */
+.app-icon-preview {
+    width: 120px;
+    height: 120px;
+    border: 2px dashed #c0c4cc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f7fa;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.app-icon-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.icon-preview {
+    width: 120px;
+    height: 120px;
+    border: 2px dashed #c0c4cc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f7fa;
+    margin-bottom: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.icon-preview:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+}
+
+.icon-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.icon-preview span {
+    font-size: 32px;
+}
+
+/* 图标输入区域 */
+.icon-inputs {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+    margin-bottom: 16px;
+}
+
+.icon-input-row {
+    display: flex;
+    gap: 12px;
+    flex: 1;
+}
+
+.image-url-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.file-select-btn {
+    padding: 12px 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.file-select-btn:hover {
+    background: #5568d3;
+}
+
+.icon-tip {
+    font-size: 12px;
+    color: #909399;
+    margin-top: 8px;
+}
+
+/* 应用列表表格 */
+.app-table-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    object-fit: cover;
+    background: #f5f7fa;
+}
+
+/* 应用类型标签 */
+.app-type-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.app-type-badge.type-1 {
+    background: #e6f7ff;
+    color: #0050b3;
+}
+
+.app-type-badge.type-2 {
+    background: #f6ffed;
+    color: #274e2b;
+}
+
+.app-type-badge.type-3 {
+    background: #fff7e6;
+    color: #ad6800;
+}
+
+/* 应用状态标签 */
+.app-status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.app-status-badge.status-normal {
+    background: #f6ffed;
+    color: #274e2b;
+}
+
+.app-status-badge.status-hidden {
+    background: #f5f5f5;
+    color: #666;
+}
+
+/* 搬运防护设置 */
+.protect-form-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.protect-form-row .form-group {
+    margin-bottom: 0;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 1200px) {
+    .protect-form-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .icon-inputs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .icon-input-row {
+        flex-direction: column;
+    }
+
+    .image-url-input {
+        width: 100%;
+    }
+
+    .file-select-btn {
+        width: 100%;
+    }
+
+    .icon-preview {
+        width: 100px;
+        height: 100px;
+    }
+
+    .table-container {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table {
+        min-width: 650px;
+    }
+
+    td .btn-sm {
+        padding: 4px 8px !important;
+        font-size: 12px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .icon-preview {
+        width: 80px;
+        height: 80px;
+    }
+
+    #addAppModal .modal-header,
+    #editAppModal .modal-header,
+    #protectModal .modal-header {
+        padding: 16px;
+    }
+
+    #addAppModal .modal-header h3,
+    #editAppModal .modal-header h3,
+    #protectModal .modal-header h3 {
+        font-size: 16px;
+    }
+}
+
+/* 搬运防护设置 - 手机端适配 */
+@media screen and (max-width: 768px) {
+    .protect-form-row {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    .protect-form-row .form-group {
+        margin-bottom: 0;
+    }
+
+    .protect-form-row label {
+        font-size: 14px;
+        margin-bottom: 6px;
+        display: block;
+    }
+
+    .protect-form-row .form-control {
+        width: 100%;
+    }
+}

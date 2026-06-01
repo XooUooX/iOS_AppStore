@@ -1,0 +1,766 @@
+/* Ning.Si软件源管理系统 - 前台公共样式 */
+
+/* ===== CSS 变量 ===== */
+:root {
+    --el-color-primary: #409eff;
+    --el-color-success: #67c23a;
+    --el-color-warning: #e6a23c;
+    --el-color-danger: #f56c6c;
+    --el-color-info: #909399;
+    --el-border-color: #dcdfe6;
+    --el-bg-color: #f5f7fa;
+    --el-text-color: #606266;
+    --el-text-color-primary: #303133;
+}
+
+/* ===== 基础重置 ===== */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+    background: #f5f7fa;
+    color: var(--el-text-color);
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* ===== 布局容器 ===== */
+.el-container { 
+    max-width: 960px; 
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+/* ===== 卡片样式 ===== */
+.el-card {
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid var(--el-border-color);
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.el-card__header {
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--el-border-color);
+    background: #fff;
+}
+
+.el-card__title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--el-text-color-primary);
+}
+
+.el-card__body { 
+    padding: 20px; 
+}
+
+/* ===== 按钮样式 ===== */
+.el-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid var(--el-border-color);
+    background: #fff;
+    color: var(--el-text-color);
+    transition: all 0.2s;
+    text-decoration: none;
+    gap: 6px;
+}
+
+.el-button--primary {
+    background: var(--el-color-primary);
+    border-color: var(--el-color-primary);
+    color: #fff;
+}
+
+.el-button--primary:hover {
+    background: #66b1ff;
+    border-color: #66b1ff;
+}
+
+.el-button--success {
+    background: var(--el-color-success);
+    border-color: var(--el-color-success);
+    color: #fff;
+}
+
+.el-button--success:hover {
+    background: #85ce61;
+    border-color: #85ce61;
+}
+
+.el-button.is-round { 
+    border-radius: 20px; 
+    padding: 12px 23px; 
+}
+
+/* ===== 输入框样式 ===== */
+.el-input {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+}
+
+.el-input__inner {
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid var(--el-border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--el-text-color);
+    transition: border-color 0.2s;
+    background: #fff;
+}
+
+.el-input__inner:focus {
+    outline: none;
+    border-color: var(--el-color-primary);
+}
+
+.el-input__inner::placeholder { 
+    color: #a8abb2; 
+}
+
+.el-input__icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a8abb2;
+    font-size: 16px;
+}
+
+.el-input__icon + .el-input__inner { 
+    padding-left: 35px; 
+}
+
+/* ===== 表单样式 ===== */
+.el-form-item {
+    margin-bottom: 22px;
+}
+
+.el-form-item__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--el-text-color);
+}
+
+.el-form-item__label.is-required::before {
+    content: '*';
+    color: var(--el-color-danger);
+    margin-right: 4px;
+}
+
+/* ===== 提示消息 ===== */
+.el-alert {
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.el-alert--success {
+    background: #f0f9eb;
+    border: 1px solid #e1f3d8;
+    color: #67c23a;
+}
+
+.el-alert--error {
+    background: #fef0f0;
+    border: 1px solid #fde2e2;
+    color: #f56c6c;
+}
+
+.el-alert__icon { 
+    font-size: 16px; 
+}
+
+.el-alert__content { 
+    flex: 1; 
+    font-size: 14px; 
+}
+
+/* ===== 头部导航 ===== */
+.el-header {
+    background: #fff;
+    border-bottom: 1px solid var(--el-border-color);
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.el-header__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.el-header__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--el-text-color-primary);
+    text-decoration: none;
+}
+
+.el-header__logo i { 
+    color: var(--el-color-primary); 
+    font-size: 20px; 
+}
+
+.el-header__nav { 
+    display: flex; 
+    gap: 30px; 
+}
+
+.el-header__nav a {
+    color: var(--el-text-color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.el-header__nav a:hover { 
+    color: var(--el-color-primary); 
+}
+
+/* ===== 快捷入口卡片 ===== */
+.el-row { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    margin-bottom: 20px; 
+}
+
+.el-col { 
+    flex: 1; 
+    min-width: 280px; 
+}
+
+.el-col-12 { 
+    flex: 0 0 calc(50% - 10px); 
+}
+
+.el-col-8 { 
+    flex: 0 0 calc(33.333% - 14px); 
+}
+
+/* 手机端适配：三个卡片一行显示 */
+@media (max-width: 768px) {
+    .el-col-8 {
+        flex: 0 0 calc(33.333% - 10px);
+        min-width: 0;
+    }
+    
+    .el-row {
+        gap: 15px;
+    }
+    
+    .shortcut-card {
+        padding: 12px;
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .shortcut-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .shortcut-title {
+        font-size: 12px;
+    }
+    
+    .shortcut-desc {
+        font-size: 11px;
+    }
+}
+
+.shortcut-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid var(--el-border-color);
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.shortcut-card:hover {
+    border-color: var(--el-color-primary);
+    box-shadow: 0 2px 12px 0 rgba(64,158,255,0.1);
+}
+
+.shortcut-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.shortcut-icon.blue { 
+    background: #ecf5ff; 
+    color: var(--el-color-primary); 
+}
+
+.shortcut-icon.green { 
+    background: #f0f9eb; 
+    color: var(--el-color-success); 
+}
+
+.shortcut-title { 
+    font-weight: 500; 
+    color: var(--el-text-color-primary); 
+    margin-bottom: 4px; 
+}
+
+.shortcut-desc { 
+    font-size: 13px; 
+    color: var(--el-color-info); 
+}
+
+/* ===== 描述列表 ===== */
+.el-descriptions {
+    background: #fff;
+    border-radius: 4px;
+}
+
+.el-descriptions__item {
+    display: flex;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--el-border-color);
+}
+
+.el-descriptions__item:last-child { 
+    border-bottom: none; 
+}
+
+.el-descriptions__label {
+    width: 100px;
+    color: var(--el-color-info);
+    font-size: 14px;
+}
+
+.el-descriptions__content {
+    flex: 1;
+    color: var(--el-text-color-primary);
+    font-weight: 500;
+}
+
+.el-descriptions__content.success { 
+    color: var(--el-color-success); 
+}
+
+/* ===== 页脚 ===== */
+.el-footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--el-color-info);
+    font-size: 13px;
+}
+
+.el-footer a {
+    color: var(--el-text-color);
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.el-footer a:hover { 
+    color: var(--el-color-primary); 
+}
+
+/* ===== 对话框 ===== */
+.el-dialog {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.el-dialog__body {
+    background: #fff;
+    border-radius: 4px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+}
+
+.el-dialog__header {
+    padding: 20px;
+    border-bottom: 1px solid var(--el-border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.el-dialog__title { 
+    font-size: 16px; 
+    font-weight: 500; 
+}
+
+.el-dialog__close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--el-color-info);
+    cursor: pointer;
+}
+
+.el-dialog__content { 
+    padding: 20px; 
+    line-height: 1.6; 
+}
+
+/* ===== 页面标题 ===== */
+.el-page-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.el-page-header__title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #303133;
+    margin-bottom: 8px;
+}
+
+.el-page-header__subtitle {
+    font-size: 14px;
+    color: #909399;
+}
+
+/* ===== 搜索框 ===== */
+.el-input-group {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    display: flex;
+}
+
+.el-input-group__prepend {
+    background: #f5f7fa;
+    border: 1px solid var(--el-border-color);
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    color: #909399;
+}
+
+.el-input-group__append {
+    background: var(--el-color-primary);
+    border: 1px solid var(--el-color-primary);
+    border-radius: 0 4px 4px 0;
+    padding: 0 20px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.el-input-group__append:hover { 
+    background: #66b1ff; 
+    border-color: #66b1ff; 
+}
+
+/* ===== 标签页 ===== */
+.el-tabs__header {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.el-tabs__item {
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid var(--el-border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #606266;
+    transition: all 0.3s;
+    background: #fff;
+}
+
+.el-tabs__item:hover { 
+    color: var(--el-color-primary); 
+}
+
+.el-tabs__item.is-active {
+    background: var(--el-color-primary);
+    border-color: var(--el-color-primary);
+    color: #fff;
+}
+
+/* ===== 应用卡片网格 ===== */
+.el-row--grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+}
+
+.el-card:hover {
+    border-color: var(--el-color-primary);
+    box-shadow: 0 2px 12px 0 rgba(64,158,255,0.1);
+}
+
+.el-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    margin: 0 auto 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.el-avatar img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.el-card__name {
+    font-weight: 500;
+    color: #303133;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.el-card__version {
+    font-size: 13px;
+    color: #909399;
+    margin-bottom: 12px;
+}
+
+.el-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid #ebeef5;
+    font-size: 12px;
+}
+
+.el-card__size { 
+    color: #909399; 
+}
+
+/* ===== 标签 ===== */
+.el-tag {
+    display: inline-block;
+    padding: 0 8px;
+    height: 22px;
+    line-height: 20px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.el-tag--success {
+    background: #f0f9eb;
+    border: 1px solid #e1f3d8;
+    color: #67c23a;
+}
+
+.el-tag--primary {
+    background: #ecf5ff;
+    border: 1px solid #d9ecff;
+    color: var(--el-color-primary);
+}
+
+.el-card__lock {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: var(--el-color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 10px;
+}
+
+/* ===== 分页 ===== */
+.el-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.el-pagination__btn {
+    min-width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--el-border-color);
+    border-radius: 4px;
+    background: #fff;
+    color: #606266;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.el-pagination__btn:hover {
+    border-color: var(--el-color-primary);
+    color: var(--el-color-primary);
+}
+
+.el-pagination__btn.is-active {
+    background: var(--el-color-primary);
+    border-color: var(--el-color-primary);
+    color: #fff;
+}
+
+.el-pagination__btn.is-disabled {
+    background: #f5f7fa;
+    color: #c0c4cc;
+    cursor: not-allowed;
+}
+
+.el-pagination__info {
+    text-align: center;
+    margin-top: 15px;
+    color: #909399;
+    font-size: 13px;
+}
+
+/* ===== 空状态 ===== */
+.el-empty {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.el-empty__image {
+    width: 100px;
+    height: 100px;
+    background: #f5f7fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 40px;
+    color: #c0c4cc;
+}
+
+.el-empty__icon {
+    width: 80px;
+    height: 80px;
+    background: #f5f7fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    color: #909399;
+}
+
+.el-empty__description {
+    color: #909399;
+    font-size: 14px;
+}
+
+/* ===== 选择框 ===== */
+.el-select {
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid var(--el-border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+    background: #fff;
+    cursor: pointer;
+}
+
+.el-select:focus { 
+    outline: none; 
+    border-color: var(--el-color-primary); 
+}
+
+/* ===== 进度条 ===== */
+.el-progress {
+    height: 6px;
+    background: #e4e7ed;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.el-progress-bar {
+    height: 100%;
+    background: var(--el-color-primary);
+    border-radius: 3px;
+    transition: width 0.3s;
+}
+
+/* ===== 结果展示 ===== */
+.el-result {
+    background: #f0f9eb;
+    border: 1px solid #e1f3d8;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.el-result__title {
+    font-size: 13px;
+    color: #67c23a;
+    margin-bottom: 10px;
+}
+
+.el-result__content {
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: 600;
+    color: #67c23a;
+    word-break: break-all;
+}
+
+/* ===== 工具类 ===== */
+.hidden { 
+    display: none !important; 
+}

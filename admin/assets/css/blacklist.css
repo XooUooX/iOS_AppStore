@@ -1,0 +1,205 @@
+/* 后台管理系统 - 黑名单管理页面样式 */
+
+/* 黑名单列表 */
+.blacklist-list {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.blacklist-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+}
+
+.blacklist-item:hover {
+    background: var(--gray-50);
+}
+
+.blacklist-item:last-child {
+    border-bottom: none;
+}
+
+.blacklist-info {
+    flex: 1;
+}
+
+.blacklist-value {
+    font-family: monospace;
+    font-size: 13px;
+    color: var(--gray-800);
+    margin-bottom: 4px;
+    word-break: break-all;
+}
+
+.blacklist-meta {
+    font-size: 12px;
+    color: var(--gray-500);
+    display: flex;
+    gap: 16px;
+}
+
+.blacklist-type {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 12px;
+}
+
+.blacklist-type.device {
+    background: #e6f7ff;
+    color: #0050b3;
+}
+
+.blacklist-type.ip {
+    background: #fff7e6;
+    color: #ad6800;
+}
+
+.blacklist-status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.blacklist-status.active {
+    background: #f0f9eb;
+    color: #274e2b;
+}
+
+.blacklist-status.expired {
+    background: #f5f5f5;
+    color: #666;
+}
+
+.blacklist-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* 添加黑名单表单 */
+.blacklist-form {
+    background: var(--white);
+    padding: 24px;
+    border-radius: var(--border-radius);
+    margin-bottom: 24px;
+}
+
+.blacklist-form .form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.blacklist-form .form-group {
+    margin-bottom: 16px;
+}
+
+.blacklist-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* 黑名单统计 */
+.blacklist-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.blacklist-stat {
+    background: var(--white);
+    padding: 16px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 1px solid var(--gray-200);
+}
+
+.blacklist-stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.blacklist-stat-label {
+    font-size: 12px;
+    color: var(--gray-500);
+}
+
+/* 搜索和筛选 */
+.blacklist-filter {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.blacklist-filter select,
+.blacklist-filter input {
+    padding: 10px 12px;
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.blacklist-filter input {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .blacklist-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .blacklist-meta {
+        width: 100%;
+        margin-top: 8px;
+        flex-wrap: wrap;
+    }
+
+    .blacklist-actions {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .blacklist-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blacklist-filter {
+        flex-direction: column;
+    }
+
+    .blacklist-filter input {
+        min-width: 100%;
+    }
+
+    .blacklist-form .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .blacklist-stats {
+        grid-template-columns: 1fr;
+    }
+}

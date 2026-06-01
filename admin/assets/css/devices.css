@@ -1,0 +1,244 @@
+/* 后台管理系统 - 设备管理页面样式 */
+
+/* 设备列表 */
+.device-list {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.device-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+}
+
+.device-item:hover {
+    background: var(--gray-50);
+}
+
+.device-item:last-child {
+    border-bottom: none;
+}
+
+.device-info {
+    flex: 1;
+}
+
+.device-id {
+    font-family: monospace;
+    font-size: 13px;
+    color: var(--gray-800);
+    margin-bottom: 4px;
+    word-break: break-all;
+}
+
+.device-meta {
+    font-size: 12px;
+    color: var(--gray-500);
+    display: flex;
+    gap: 16px;
+}
+
+.device-status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 12px;
+}
+
+.device-status.active {
+    background: #f0f9eb;
+    color: #274e2b;
+}
+
+.device-status.disabled {
+    background: #fef0f0;
+    color: #5c0a0a;
+}
+
+.device-status.expired {
+    background: #fff7e6;
+    color: #ad6800;
+}
+
+.device-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* 设备详情弹窗 */
+.device-detail-modal {
+    max-width: 500px;
+}
+
+.device-detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.device-detail-item:last-child {
+    border-bottom: none;
+}
+
+.device-detail-label {
+    font-weight: 600;
+    color: var(--gray-700);
+    min-width: 100px;
+}
+
+.device-detail-value {
+    flex: 1;
+    text-align: right;
+    color: var(--gray-600);
+    word-break: break-all;
+}
+
+.device-detail-value.copyable {
+    cursor: pointer;
+    color: var(--primary);
+}
+
+.device-detail-value.copyable:hover {
+    text-decoration: underline;
+}
+
+/* 拉黑设置 */
+.blacklist-settings {
+    background: var(--gray-50);
+    padding: 16px;
+    border-radius: 4px;
+    margin-top: 16px;
+}
+
+.blacklist-duration {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.blacklist-duration label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.blacklist-duration input[type="radio"] {
+    cursor: pointer;
+}
+
+.blacklist-reason {
+    margin-bottom: 12px;
+}
+
+.blacklist-reason textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+    font-size: 12px;
+    resize: vertical;
+}
+
+/* 设备统计 */
+.device-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.device-stat {
+    background: var(--white);
+    padding: 16px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 1px solid var(--gray-200);
+}
+
+.device-stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.device-stat-label {
+    font-size: 12px;
+    color: var(--gray-500);
+}
+
+/* 搜索和筛选 */
+.device-filter {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.device-filter select,
+.device-filter input {
+    padding: 10px 12px;
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.device-filter input {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .device-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .device-meta {
+        width: 100%;
+        margin-top: 8px;
+        flex-wrap: wrap;
+    }
+
+    .device-actions {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .device-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .device-filter {
+        flex-direction: column;
+    }
+
+    .device-filter input {
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .device-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .device-detail-item {
+        flex-direction: column;
+    }
+
+    .device-detail-value {
+        text-align: left;
+        margin-top: 4px;
+    }
+}
